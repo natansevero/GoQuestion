@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="GoQuestion">
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-
+    <h2>Header</h2>
+    <a href="/#!/">Default</a>
+    <a href="/#!/users">Users</a>
+    <div data-ng-view></div>
   </body>
+  <script src="assets/libs/angular.min.js" charset="utf-8"></script>
+  <script src="assets/libs/angular-route.min.js" charset="utf-8"></script>
+  <script src="assets/js/app.module.js" charset="utf-8"></script>
+  <script src="assets/js/app.routes.js" charset="utf-8"></script>
+  <script src="assets/js/controllers/user.controller.js" charset="utf-8"></script>
 </html>
