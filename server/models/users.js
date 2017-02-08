@@ -1,7 +1,6 @@
 const pg = require('pg');
 const conString = 'postgres://postgres:12345@localhost:5432/GoQuestion';
 
-
 const Users = {
   create: (user, callback) => {
     console.log(user.user);
@@ -40,7 +39,7 @@ const Users = {
     pg.connect(conString, (err, client) => {
       if(err) return console.log("Error: ", err);
       client.query(
-        `select usuario, sexo, idade, renda, escolaridade, st_AsEwkt(localizacao), email, senha, tipo, token
+        `select id, usuario, sexo, idade, renda, escolaridade, st_AsEwkt(localizacao), email, senha, tipo, token
         from usuario`,
         callback);
     });
