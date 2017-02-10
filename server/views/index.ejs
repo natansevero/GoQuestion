@@ -1,11 +1,102 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>API GoQuestion</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" media="screen">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="container">
+      <header class="jumbotron col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1>GoQuestion - API - Node.js</h1>
+      </header>
+
+      <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h2>Introdução</h2>
+        <p>Esta é a API da aplicação GoQuestion</p>
+      </section>
+
+      <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h2>GoQuestion - Rotas da API</h2><br>
+
+        <h4 class="alert alert-info">Users</h4>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="col-md-6">API</th>
+              <th class="col-md-6">Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="method">POST/ </span>api/users/create</td>
+              <td>Criar um novo usuário</td>
+            </tr>
+            <tr>
+              <td><span class="method">POST/ </span>api/users/authenticate</td>
+              <td>Fazer autenticação de um usuário</td>
+            </tr>
+            <tr>
+              <td><span class="method">GET/ </span>api/users</td>
+              <td>Retornar todos os usuários da base de dados</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 class="alert alert-info">Questions</h4>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="col-md-6">API</th>
+              <th class="col-md-6">Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="method">POST/ </span>api/questions/create</td>
+              <td>Criar uma pergunta</td>
+            </tr>
+            <tr>
+              <td><span class="method">GET/ </span>api/questions</td>
+              <td>Retornar todas as perguntas da base de dados</td>
+            </tr>
+            <tr>
+              <td><span class="method">GET/ </span>api/questions/:id</td>
+              <td>Retornar uma pergunta especifica de acordo com o seu ID</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 class="alert alert-info">Polls</h4>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="col-md-6">API</th>
+              <th class="col-md-6">Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="method">POST/ </span>api/polls/response/:id_question</td>
+              <td>Criar uma resposta para uma pergunta especifica de acordo com o ID da pergunta</td>
+            </tr>
+            <tr>
+              <td><span class="method">GET/ </span>api/:id_question</td>
+              <td>Retornar um conjunto de dados sobre usuário, pergunta e resposta de acordo
+              com o ID da pergunta</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3>© 2017 - GoQuestion</h3>
+      </footer>
+    </div>
   </body>
+  <!-- Biblioteca JQuery -->
+  <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+  <!-- JavaScript Bootstrap -->
+  <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
 </html>

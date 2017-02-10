@@ -16,3 +16,7 @@
 ```
   npm start
 ```
+5: Acesse no navegador e veja as informações sobre a API:
+```
+  http://localhost:3000/api
+```
