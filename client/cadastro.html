@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html data-ng-app="GoQuestion">
+  <head>
+    <meta charset="utf-8">
+    <title>GoQuestion! - Home</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="ic++on-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><img src="assets/img/GoQuestion_-_Logomarca.png" /></a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html" class="this">Home</a></li>
+						<li><a href="programacao.html">Perguntas</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+    </header>
+
+    <section class="container-fluid">
+    	<div class="row-fluid">
+    		<div  class="col-md-6">
+				<div id="map"></div>
+			</div>
+
+    		<div class="col-md-offset-1 col-md-4">
+    			<h1>Cadastro de Usuário</h1><br>
+    			<form>
+					<div class="form-group">
+						<label for="username">Digite o nome de usuário:</label>
+						<input type="text" class="form-control" id="username" required>
+					</div>
+					<div class="form-group">
+						<label for="email">Digite o seu e-mail:</label>
+						<input type="email" class="form-control" id="email" required>
+					</div>
+					
+					<div class="form-group">
+						<label for="senha">Digite a sua senha:</label>
+						<input type="password" class="form-control" id="senha" required>
+					</div>
+					<div class="form-group">
+						<label for="sexo">Informe o seu sexo:</label>
+						<select class="form-control" id="sexo" required>
+							<option value="feminino">Feminino</option>
+							<option value="masculino">Masculino</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="idade">Informe a sua idade:</label>
+						<input type="number" min="0" max="100" class="form-control" id="idade" required>
+					</div>
+					<div class="form-group">
+						<label for="escolaridade">Informe a sua escolaridade:</label>
+						<select class="form-control" id="escolaridade" required>
+							<option value="Ensino Fundamental">Ensino Fundamental</option>
+							<option value="Ensino Médio">Ensino Médio</option>
+							<option value="Ensino Superior">Ensino Superior</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="renda">Informe a sua renda:</label>
+						<input type="number" min="0" max="1" class="form-control" id="renda" required>
+					</div>
+
+					<input class="form-group btn btn-default" type="reset" name="Limpar">
+					<input class="btn btn-default" type="submit" name="Enviar">
+    			</form><br>
+    		</div>
+    	</div>
+    </section>
+
+    <footer>
+    	<p>&copy; GoQuestion, 2017 - Todos os direitos reservados </p>
+    </footer>
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 6
+  });
+  var infoWindow = new google.maps.InfoWindow({map: map});
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNtNtt69aiHeomzikFinTJabcQq37_Wm8&callback=initMap"
+        async defer>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="assets/libs/angular.min.js" charset="utf-8"></script>
+	<script src="assets/libs/angular-route.min.js" charset="utf-8"></script>
+	<script src="assets/js/app.module.js" charset="utf-8"></script>
+	<script src="assets/js/app.routes.js" charset="utf-8"></script>
+	<script src="assets/js/controllers/user.controller.js" charset="utf-8"></script>
+</html>
