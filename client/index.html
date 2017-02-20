@@ -2,14 +2,47 @@
 <html data-ng-app="GoQuestion">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>GoQuestion! - Home</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
   </head>
   <body>
-    <h2>Header</h2>
-    <a href="/#!/">Default</a>
-    <a href="/#!/users">Users</a>
-    <div data-ng-view></div>
-  </body>
+    <header>
+      <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="ic++on-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="assets/img/GoQuestion_-_Logomarca.png" /></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html" class="this">Home</a></li>
+            <li><a href="programacao.html">Perguntas</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    </header>
+
+  <div data-ng-view></div>
+
+    <footer>
+      <p>&copy; GoQuestion, 2017 - Todos os direitos reservados </p>
+    </footer>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="assets/js/geocolation.js"></script>
   <script src="assets/libs/angular.min.js" charset="utf-8"></script>
   <script src="assets/libs/angular-route.min.js" charset="utf-8"></script>
   <script src="assets/js/app.module.js" charset="utf-8"></script>
