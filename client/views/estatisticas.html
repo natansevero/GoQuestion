@@ -1,0 +1,64 @@
+
+    <section class="container-fluid">
+    	<div class="row-fluid">
+    		<div class="col-md-6">
+    			<div id="map"></div>
+    		</div>
+    		<div class="col-md-offset-1 col-md-4">
+    			<h2>Pergunta aqui pergunta aqui</h3>
+    			<div class="table-responsive">
+					<table class="table">
+						<thead>
+      						<tr>
+        						<th>Sim</th>
+        						<th>Não</th>
+        						<th>Não sei</th>
+      						</tr>
+    					</thead>
+    					<tbody>
+      						<tr>
+        						<th>Percent de Sim</th>
+        						<th>Percent de Não</th>
+        						<th>Percent de Não sei</th>
+      						</tr>
+    					</thead>
+    				</table>
+				</div>		
+				<h3>Filtrar	resultados da busca:</h3>
+				<form>
+					<div class="form-group">
+						<label for="tipo-resposta">Tipo de Resposta:</label>
+						<select class="form-control" id="escolaridade" >
+							<option value="Ensino Fundamental">Sim</option>
+							<option value="Ensino Médio">Não</option>
+							<option value="Ensino Superior">Não sei</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="faixa-salarial">Faixa salarial:</label>
+						<select class="form-control" id="escolaridade">
+							<option value="Ensino Fundamental">Abaixo de um salário mínimo</option>
+							<option value="Ensino Médio">Entre um e dois salários mínimos</option>
+							<option value="Ensino Superior">Não sei</option>
+						</select>
+					</div>
+					<div class="form-group">	
+						<label for="escolaridade">Informe a sua escolaridade:</label>
+						<select class="form-control" id="escolaridade" required>
+							<option value="Ensino Fundamental">Ensino Fundamental</option>
+							<option value="Ensino Médio">Ensino Médio</option>
+							<option value="Ensino Superior">Ensino Superior</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="sexo">Informe o seu sexo:</label>
+						<select class="form-control" id="sexo" required>
+							<option value="feminino">Feminino</option>
+							<option value="masculino">Masculino</option>
+						</select>
+					</div>
+					<input class="btn btn-default" type="submit" name="Carregar resultados">
+    			</form><br>
+    		</div>
+    	</div>
+    </section>
