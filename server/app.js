@@ -27,12 +27,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Routes
-app.use('/', index);
-app.use('/api/users', users);
-app.use('/api/questions', questions);
-app.use('/api/polls', polls);
-
 //Middleware para Preflight Request
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -42,6 +36,12 @@ app.use((req, res, next) => {
 
   next();
 });
+
+//Routes
+app.use('/', index);
+app.use('/api/users', users);
+app.use('/api/questions', questions);
+app.use('/api/polls', polls);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

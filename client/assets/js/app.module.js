@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  angular.module('GoQuestion', ['ngRoute', 'RoutesConfig', 'User'])
+  angular.module('GoQuestion', ['ngRoute', 'RoutesConfig', 'Login'])
     .config(['$routeProvider', function($routeProvider) {
       $routeProvider
         .when('/', {

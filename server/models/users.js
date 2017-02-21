@@ -21,7 +21,7 @@ const Users = {
     pg.connect(conString, (err, client) => {
       if(err) return console.log("Error Authenticate UserModel:", err);
       client.query(
-        `select usuario, email, senha, tipo, token from usuario
+        `select id, usuario, email, senha, tipo, token from usuario
         where email ilike '${user.email}' and senha ilike '${user.senha}'`,
         callback
       );
