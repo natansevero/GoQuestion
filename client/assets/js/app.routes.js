@@ -6,10 +6,10 @@
 
     function config($routeProvider){
       $routeProvider
-        .when('/users', {
-          templateUrl: 'views/users.html',
-          controller: 'UserController',
-          controllerAs: 'User'
+        .when('/login', {
+          templateUrl: 'views/login.html',
+          controller: 'LoginController',
+          controllerAs: 'Login'
         })
     }
     config.$inject = ['$routeProvider'];
