@@ -1,53 +1,62 @@
     <section class="container-fluid">
     	<div class="row-fluid">
     		<div class="col-md-6">
-    			<iframe class="z-depth-2" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-    		</div>
+    			<!-- <iframe class="z-depth-2" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+          <input type="text" class="form-control" id="address" required>
+          <button type="button" id="submit" name="button">Buscar</button>
+          <div id="mapa_cadastro"></div>
+        </div>
 
     		<div class="col-md-offset-1 col-md-4">
     			<h1>Cadastro de Usuário</h1><br>
     			<form>
 					<div class="form-group">
 						<label for="username">Digite o nome de usuário:</label>
-						<input type="text" class="form-control" id="username" required>
+						<input type="text" data-ng-model="Cadastro.form.nome" class="form-control" id="username" required>
 					</div>
 					<div class="form-group">
 						<label for="email">Digite o seu e-mail:</label>
-						<input type="email" class="form-control" id="email" required>
+						<input type="email" data-ng-model="Cadastro.form.email" class="form-control" id="email" required>
 					</div>
-					
+
 					<div class="form-group">
 						<label for="senha">Digite a sua senha:</label>
-						<input type="password" class="form-control" id="senha" required>
+						<input type="password" data-ng-model="Cadastro.form.senha" class="form-control" id="senha" required>
 					</div>
 					<div class="form-group">
 						<label for="sexo">Informe o seu sexo:</label>
-						<select class="form-control" id="sexo" required>
-							<option value="feminino">Feminino</option>
-							<option value="masculino">Masculino</option>
+						<select class="form-control" id="sexo" data-ng-model="Cadastro.form.sexo" required>
+							<option value="f">Feminino</option>
+							<option value="m">Masculino</option>
 						</select>
 					</div>
 					<div class="form-group">
 						<label for="idade">Informe a sua idade:</label>
-						<input type="number" min="0" max="100" class="form-control" id="idade" required>
+						<input type="number" data-ng-model="Cadastro.form.idade" min="0" max="100" class="form-control" id="idade" required>
 					</div>
 					<div class="form-group">
 						<label for="escolaridade">Informe a sua escolaridade:</label>
-						<select class="form-control" id="escolaridade" required>
-							<option value="Ensino Fundamental">Ensino Fundamental</option>
-							<option value="Ensino Médio">Ensino Médio</option>
-							<option value="Ensino Superior">Ensino Superior</option>
+						<select class="form-control" data-ng-model="Cadastro.form.escolaridade" id="escolaridade" required>
+							<option value="ef">Ensino Fundamental</option>
+							<option value="em">Ensino Médio</option>
+							<option value="es">Ensino Superior</option>
 						</select>
 					</div>
 					<div class="form-group">
 						<label for="renda">Informe a sua renda:</label>
-						<input type="number" min="0" max="1" class="form-control" id="renda" required>
+						<input type="number" data-ng-model="Cadastro.form.renda" class="form-control" id="renda" required>
+					</div>
+          <div class="form-group">
+						<label for="renda">Informe seu tipo de usuário:</label>
+            <select class="form-control" data-ng-model="Cadastro.form.tipo" id="escolaridade" required>
+							<option value="simples">Simples</option>
+							<option value="adm">Administrador</option>
+						</select>
 					</div>
 
 					<input class="form-group btn btn-default" type="reset" name="Limpar">
-					<input class="btn btn-default" type="submit" name="Enviar">
+					<input class="btn btn-default" type="submit" name="Enviar" data-ng-click="Cadastro.cadastrar(Cadastro.form)">
     			</form><br>
     		</div>
     	</div>
     </section>
-

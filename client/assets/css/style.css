@@ -26,7 +26,7 @@ footer {
   font-weight: bold;
   font-size: 1.2em;
   color: #FF9900;
-  background-color: #073673 !important; 
+  background-color: #073673 !important;
 }
 
 .btn-default {
@@ -57,12 +57,12 @@ footer {
 
 /* Index */
 
-#map{
+#mapa_cadastro {
   width:100% !important;
-  height: 100% !important;
+  height: 600px !important;
   min-height:100% !important;
   margin: 0 !important;
-  padding: 0 !important; 
+  padding: 0 !important;
 }
 
 /* Perguntas */
