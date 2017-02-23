@@ -70,6 +70,7 @@
         .cadastro(cadastro)
         .then((res) => {
           console.log("Res:", res.data[0]);
+          window.location.href = '#!/';
         }, (err) => {
           console.log("Err:", err);
         })
