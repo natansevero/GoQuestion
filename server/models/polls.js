@@ -16,7 +16,7 @@ const Polls = {
     pg.connect(conString, (err, client) => {
       if(err) return console.log("Error getOne Polls Model:", err);
       client.query(
-        `select u.usuario, u.idade, u.escolaridade, st_asewkt(u.localizacao),
+        `select u.id, u.usuario, u.idade, u.escolaridade, st_asewkt(u.localizacao),
         q.pergunta, e.resposta from usuario u, questao q, enquete e
         where e.id_usuario = u.id
         and e.codigo_pergunta = q.codigo

@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
     <style media="screen">
-      #mapa {
-        border: 2px solid red;
+      .navbar {
+        height: 75px;
       }
     </style>
   </head>
@@ -30,8 +30,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.html" class="this">Home</a></li>
-            <li><a href="programacao.html">Perguntas</a></li>
+
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -53,6 +52,9 @@
 
   <script src="assets/libs/angular.min.js" charset="utf-8"></script>
   <script src="assets/libs/angular-route.min.js" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+  <script src="assets/libs/angular.simple.logger.js" charset="utf-8"></script>
+  <script src="assets/libs/angular-google-maps.min.js" charset="utf-8"></script>
   <script src="assets/js/app.module.js" charset="utf-8"></script>
   <script src="assets/js/app.routes.js" charset="utf-8"></script>
   <!-- Login -->
@@ -61,5 +63,14 @@
   <!-- Cadastro -->
   <script src="assets/js/controllers/cadastro.controller.js" charset="utf-8"></script>
   <script src="assets/js/services/cadastro.service.js" charset="utf-8"></script>
+  <!-- Home (Perguntas) -->
+  <script src="assets/js/controllers/home.controller.js" charset="utf-8"></script>
+  <script src="assets/js/controllers/pergunta.controller.js" charset="utf-8"></script>
+  <script src="assets/js/services/question.service.js" charset="utf-8"></script>
+  <!-- Polls -->
+  <script src="assets/js/controllers/poll.controller.js" charset="utf-8"></script>
+  <script src="assets/js/services/poll.service.js" charset="utf-8"></script>
+  <!-- Admin -->
+  <script src="assets/js/controllers/admin.controller.js" charset="utf-8"></script>
 
 </html>
