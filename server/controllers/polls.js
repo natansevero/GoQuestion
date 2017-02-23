@@ -25,8 +25,8 @@ const PollsController = {
       polls.forEach(el => {
         let point = reader.read(el.st_asewkt);
         el.st_asewkt = {
-          lat: point.getX(),
-          lng: point.getY()
+          latitude: point.getX(),
+          longitude: point.getY()
         }
       });
 

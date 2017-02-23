@@ -17,6 +17,13 @@ const QuestionsController = {
     });
   },
 
+  votes: (req, res) => {
+    Questions.votes((err, result) => {
+      if(err) return console.log("Error Question Controller Votes:", err);
+      return res.status(200).json(result.rows);
+    })
+  },
+
   getOne: (req, res) => {
     let codigo = req.params.codigo;
 

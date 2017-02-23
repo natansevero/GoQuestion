@@ -19,6 +19,17 @@ const Questions = {
     })
   },
 
+  votes: (callback) => {
+    pg.connect(conString, (err, client) => {
+      if(err) return console.log("Error Question Model Votes:", err);
+      client.query(
+        `select u.id, e.codigo_pergunta from enquete e, usuario u
+        where u.id = e.id_usuario`,
+        callback
+      )
+    })
+  },
+
   getOne: (codigo, callback) => {
     pg.connect(conString, (err, client) => {
       if(err) return console.log("Error Question Model Get One:", err);

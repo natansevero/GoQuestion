@@ -1,12 +1,38 @@
-
+  <style media="screen">
+    .pergunta {
+      margin-bottom: 30px;
+    }
+    .area-user {
+      height: 50px;
+      background-color: rgb(232, 139, 51);
+      margin-top: -25px;
+    }
+    .button-sair {
+      float: right;
+      margin-top: 7px;
+      margin-right: 10px;
+      width: 100px;
+    }
+    .button-cadastrar {
+      float: right;
+      margin-top: 7px;
+      margin-right: 10px;
+      width: 200px;
+    }
+  </style>
   <section class="container-fluid">
+    <div class="row area-user">
+      <button type="button" data-ng-click="Home.sair()" class="btn btn-danger button-sair" name="button">Sair</button>
+      <button type="button" data-ng-click="Home.goAdmin()" data-ng-if="Home.adm" class="btn btn-success button-cadastrar" name="button">Cadastrar Pergunta</button>
+    </div>
     <div class="row-fluid">
-      <div class="col-md-offset-2 col-md-8 pergunta">
-        <h2>Pergunta Aqui Pergunta Aqui Pergunta Aqui</h2>
+      <h2>Seja bem-vindo, {{ Home.usuario }}!</h2>
+      <h2>Aqui você pode escolher nossos enquetes para votar!</h2><br><br>
+      <div class="col-md-offset-2 col-md-8 pergunta" data-ng-repeat="q in Home.questions">
+        <h2>{{ q.pergunta }}</h2>
         <ul>
-          <li><a href="">❏ Sim</a></li>
-          <li><a href="">❏ Não</a></li>
-          <li><a href="">❏ Não sei</a></li>
+          <li data-ng-if="!q.vote"><button type="button" data-ng-click="Home.votar(q.codigo)" class="btn btn-default" name="button">Votar</button></li>
+          <li><button type="button" class="btn btn-info" data-ng-click="Home.visualizar(q.codigo)" name="button">Visualizar Enquete</button></li>
         </ul>
       </div>
     </div>

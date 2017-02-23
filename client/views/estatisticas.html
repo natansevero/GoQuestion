@@ -1,8 +1,10 @@
-
+    <style media="screen">
+      .angular-google-map-container { height: 600px; }
+    </style>
     <section class="container-fluid">
     	<div class="row-fluid">
     		<div class="col-md-6">
-    			<div id="map"></div>
+          <div id="mapa_poll"></div>
     		</div>
     		<div class="col-md-offset-1 col-md-4">
     			<h2>Pergunta aqui pergunta aqui</h3>
@@ -17,48 +19,50 @@
     					</thead>
     					<tbody>
       						<tr>
-        						<th>Percent de Sim</th>
-        						<th>Percent de Não</th>
-        						<th>Percent de Não sei</th>
+        						<th>{{ Poll.perc_sim }}%</th>
+        						<th>{{ Poll.perc_nao }}%</th>
+        						<th>{{ Poll.perc_ns }}%</th>
       						</tr>
     					</thead>
     				</table>
-				</div>		
+				</div>
 				<h3>Filtrar	resultados da busca:</h3>
 				<form>
 					<div class="form-group">
 						<label for="tipo-resposta">Tipo de Resposta:</label>
-						<select class="form-control" id="escolaridade" >
-							<option value="Ensino Fundamental">Sim</option>
-							<option value="Ensino Médio">Não</option>
-							<option value="Ensino Superior">Não sei</option>
+						<select class="form-control" data-ng-model="Poll.form.resposta" id="resposta" >
+							<option value="nda">Sem este filtro</option>
+							<option value="S">Sim</option>
+							<option value="N">Não</option>
+							<option value="NS">Não sei</option>
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="faixa-salarial">Faixa salarial:</label>
-						<select class="form-control" id="escolaridade">
-							<option value="Ensino Fundamental">Abaixo de um salário mínimo</option>
-							<option value="Ensino Médio">Entre um e dois salários mínimos</option>
-							<option value="Ensino Superior">Não sei</option>
-						</select>
-					</div>
-					<div class="form-group">	
 						<label for="escolaridade">Informe a sua escolaridade:</label>
-						<select class="form-control" id="escolaridade" required>
-							<option value="Ensino Fundamental">Ensino Fundamental</option>
-							<option value="Ensino Médio">Ensino Médio</option>
-							<option value="Ensino Superior">Ensino Superior</option>
+						<select class="form-control" data-ng-model="Poll.form.escolaridade" id="escolaridade" required>
+              <option value="nda">Sem este filtro</option>
+							<option value="ef">Ensino Fundamental</option>
+							<option value="em">Ensino Médio</option>
+							<option value="es">Ensino Superior</option>
 						</select>
 					</div>
-					<div class="form-group">
-						<label for="sexo">Informe o seu sexo:</label>
-						<select class="form-control" id="sexo" required>
-							<option value="feminino">Feminino</option>
-							<option value="masculino">Masculino</option>
-						</select>
-					</div>
-					<input class="btn btn-default" type="submit" name="Carregar resultados">
+					<input class="btn btn-default" data-ng-click="Poll.filtrar(Poll.form)" type="submit" name="Carregar resultados">
     			</form><br>
+          <br><br><br><br><br><br>
+          <button class="btn btn-danger" data-ng-click="Poll.back()" type="button">Página Inicial</button>
+
     		</div>
     	</div>
     </section>
+
+
+    <!-- <ui-gmap-google-map center='Poll.map.center' zoom='5'>
+
+      <ui-gmap-marker data-ng-repeat="p in Poll.poll"
+          idKey="p.id"
+          coords="p.st_asewkt"
+          options.icon
+          >
+
+      </ui-gmap-marker>
+    </ui-gmap-google-map> -->

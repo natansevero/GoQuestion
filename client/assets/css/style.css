@@ -27,6 +27,7 @@ footer {
   font-size: 1.2em;
   color: #FF9900;
   background-color: #073673 !important;
+  margin-top: 20px;
 }
 
 .btn-default {
@@ -58,6 +59,14 @@ footer {
 /* Index */
 
 #mapa_cadastro {
+  width:100% !important;
+  height: 600px !important;
+  min-height:100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#mapa_poll {
   width:100% !important;
   height: 600px !important;
   min-height:100% !important;

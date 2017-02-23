@@ -6,9 +6,9 @@
                     <h1>Cadastrar Pergunta</h1>
                 <div class="form-group">
 				    <label for="pergunta">Escreva a pergunta que deseja cadastrar</label>
-                    <textarea class="form-control" rows="3" id="pergunta"></textarea>
+                    <textarea class="form-control" data-ng-model="Admin.form.pergunta" rows="3" id="pergunta"></textarea>
                 </div>
-                <button class="btn btn-default" type="submit" name="">Cadastrar Pergunta</button>
+                <button data-ng-click="Admin.cadPergunta(Admin.form)" class="btn btn-default" type="submit" name="">Cadastrar Pergunta</button>
                 </form><br><br>
             </div>
           </div>
